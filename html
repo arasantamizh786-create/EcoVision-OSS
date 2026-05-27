@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoVision OSS</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0fdf4;
+      color: #1f2937;
+    }
+
+    header {
+      background: linear-gradient(135deg, #065f46, #22c55e);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #047857;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #059669;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .result {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #dcfce7;
+      border-left: 5px solid #16a34a;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #064e3b;
+      color: white;
+      text-align: center;
+      padding: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>EcoVision OSS</h1>
+    <p>Smart Environmental Awareness Web Project</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>About Project</h2>
+      <p>
+        EcoVision OSS is an open-source web project that promotes environmental
+        awareness and helps users understand simple eco-friendly actions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Eco Action Score</h2>
+      <p>Enter number of eco-friendly actions you followed today:</p>
+
+      <input type="number" id="actions" placeholder="Example: 5">
+      <button onclick="checkEcoScore()">Check Score</button>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <div class="card">
+      <h2>Features</h2>
+      <ul>
+        <li>Simple eco-score checker</li>
+        <li>Environmental awareness tips</li>
+        <li>Beginner-friendly open-source project</li>
+        <li>Supports GitHub collaboration workflow</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Eco Tips</h2>
+      <ul>
+        <li>Reduce plastic usage</li>
+        <li>Save electricity and water</li>
+        <li>Use public transport when possible</li>
+        <li>Plant trees and protect nature</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>EcoVision OSS | Open Source Project | GitHub Collaboration</p>
+  </footer>
+
+  <script>
+    function checkEcoScore() {
+      let actions = Number(document.getElementById("actions").value);
+      let result = document.getElementById("result");
+
+      result.style.display = "block";
+
+      if (actions >= 8) {
+        result.innerHTML = "Excellent! You are an Eco Champion.";
+      } else if (actions >= 4) {
+        result.innerHTML = "Good job! Continue improving your eco-friendly habits.";
+      } else {
+        result.innerHTML = "Start small! Save electricity, reduce plastic, and plant trees.";
+      }
+    }
+  </script>
+
+</body>
+</html>
